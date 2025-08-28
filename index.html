@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stiker WA - Kumpulan Stiker WhatsApp Keren</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Kiri -->
+        <aside class="sidebar-left">
+            <div class="logo">
+                <!-- Placeholder for Logo -->
+                <i class="fab fa-twitter fa-2x"></i>
+            </div>
+            <nav>
+                <a href="/index.html" class="nav-item active"><i class="fas fa-home"></i> <span>Beranda</span></a>
+                <a class="nav-item disabled"><i class="fas fa-hashtag"></i> <span>Jelajah</span></a>
+                <a class="nav-item disabled"><i class="fas fa-bookmark"></i> <span>Bookmark</span></a>
+                <a href="/profile.html" class="nav-item"><i class="fas fa-user"></i> <span>Profil</span></a>
+            </nav>
+            <button class="tweet-button" style="display: none;">Unggah Stiker</button>
+
+            <!-- User Profile Section -->
+            <div class="user-profile" style="display: none; margin-top: auto; padding-bottom: 16px;">
+                <div class="user-info">
+                    <span id="user-email" style="font-weight: bold;"></span>
+                </div>
+                <button id="logout-button" class="action-btn" style="margin-left: auto;">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Feed Utama -->
+        <main class="main-feed">
+            <header class="feed-header">
+                <h2>Beranda</h2>
+            </header>
+
+            <!-- Kontainer untuk Stiker -->
+            <div class="sticker-container" id="sticker-container">
+                <!-- Stiker akan dimuat di sini oleh JavaScript -->
+            </div>
+        </main>
+
+        <!-- Sidebar Kanan -->
+        <aside class="sidebar-right">
+            <form class="search-bar" id="search-form">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Cari Stiker..." name="query">
+            </form>
+
+            <div class="trending-stickers" id="trending-stickers-container">
+                <h3>Trending untuk Anda</h3>
+                <!-- Konten trending akan dimuat di sini -->
+            </div>
+        </aside>
+    </div>
+
+    <!-- Supabase and App Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/app-config.js"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Modal untuk Unggah Stiker -->
+    <div id="upload-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-button">&times;</span>
+                <h2>Unggah Stiker Baru</h2>
+            </div>
+            <div class="modal-body">
+                <form id="sticker-upload-form">
+                    <div id="image-preview" class="image-preview-area">
+                        <img id="preview-img" src="#" alt="Pratinjau Gambar" style="display:none;">
+                        <label for="sticker-file-input" class="file-label">Pilih Gambar</label>
+                        <input type="file" id="sticker-file-input" accept="image/png, image/jpeg, image/gif" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sticker-title">Judul</label>
+                        <input type="text" id="sticker-title" placeholder="Stiker Kucing Lucu" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sticker-tags">Tags (pisahkan dengan koma)</label>
+                        <input type="text" id="sticker-tags" placeholder="kucing, lucu, imut">
+                    </div>
+                    <!-- Nanti bisa diisi dinamis dari tabel categories -->
+                    <div class="form-group">
+                        <label for="sticker-category">Kategori</label>
+                        <select id="sticker-category">
+                            <option value="">Pilih Kategori (Opsional)</option>
+                        </select>
+                    </div>
+                     <div id="upload-error" class="error-message" style="display:none;"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="sticker-upload-form" id="upload-submit-button" class="modal-button">
+                    <span class="button-text">Unggah</span>
+                    <span class="spinner" style="display: none;"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

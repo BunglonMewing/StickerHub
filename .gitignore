@@ -1,0 +1,8 @@
+# Abaikan file konfigurasi yang berisi kunci rahasia
+js/app-config.js
+
+# Abaikan file environment
+.env
+
+# Abaikan dependensi Node.js
+node_modules/
