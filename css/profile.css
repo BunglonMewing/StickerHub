@@ -1,0 +1,53 @@
+/* css/profile.css */
+
+.profile-header {
+    padding: 16px;
+    border-bottom: 1px solid var(--c-border);
+}
+
+.profile-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.profile-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--c-border);
+}
+
+.tab-button {
+    flex: 1;
+    padding: 16px;
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--c-dark-gray);
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-button.active {
+    font-weight: 700;
+    color: var(--c-text);
+}
+
+.tab-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 9999px;
+}
+
+#profile-sticker-container .sticker-card {
+    border-top: 1px solid var(--c-border);
+    border-bottom: none;
+}
+
+#profile-sticker-container .sticker-card:first-child {
+    border-top: none;
+}

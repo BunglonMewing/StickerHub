@@ -1,0 +1,113 @@
+/* css/auth.css */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--c-secondary-background) !important;
+}
+
+.auth-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+}
+
+.auth-box {
+    background-color: var(--c-background);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--c-border);
+}
+
+.auth-box .logo {
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--primary-color);
+}
+
+.auth-box h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: var(--c-text);
+}
+
+.auth-box .form-group {
+    margin-bottom: 16px;
+}
+
+.auth-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--c-dark-gray);
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid var(--c-light-gray);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--c-background);
+    color: var(--c-text);
+}
+
+.auth-box input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.2);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s;
+}
+
+.auth-button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 24px;
+    color: var(--c-dark-gray);
+}
+
+.auth-switch a {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.error-message {
+    color: #e0245e;
+    background-color: rgba(224, 36, 94, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 16px;
+    text-align: center;
+    display: none; /* Hidden by default */
+}
+
+.success-message {
+    color: #17bf63;
+    background-color: rgba(23, 191, 99, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 16px;
+    text-align: center;
+    display: none; /* Hidden by default */
+}
